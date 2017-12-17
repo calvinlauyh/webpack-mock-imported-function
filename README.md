@@ -2,6 +2,7 @@
 When writing test cases you sometimes want to control the behaviour of a certain function so that you can force the code to enter certain path, which is — mocking. Recently, I am trying to write such a test case. The challenge is that I am using webpack to bundle the code together and the function I want to mock is imported from another module in the target file.
 
 The basic file structure is like this. I have two files:
+
 utils.js (The module with the function I want to mock)
 ```
 export function fetchData() {
