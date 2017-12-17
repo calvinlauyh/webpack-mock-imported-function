@@ -63,9 +63,11 @@ dist/
 folder containing the webpack builds of the test files
 
 Once cloned, you can go to the directory and execute the command
+```
 npm run build
+```
 
-Code Study
+# Code Study
 Let’s us first study the built file `dist/test_import_whole_module.js`, the test file is transformed into the follow code snippet
 ```
 /* 3 */
