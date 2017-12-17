@@ -66,7 +66,7 @@ Once cloned, you can go to the directory and execute the command
 npm run build
 
 Code Study
-Let’s us first study the built file dist/test_import_whole_module.js, the test file is transformed into the follow code snippet
+Let’s us first study the built file `dist/test_import_whole_module.js`, the test file is transformed into the follow code snippet
 ```
 /* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -106,7 +106,7 @@ This solve my first question: "Why the app.js is able to use the functions that 
 
 To solve my second question, let’s compare the code generated using different import methods:
 
-Import function only
+### Import function only
 ```
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(0);
 …
@@ -114,7 +114,7 @@ Import function only
 console.log(__WEBPACK_IMPORTED_MODULE_1__utils__["fetchData"]);
 ```
 
-Import default module
+### Import default module
 ```
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(4);
 ...
@@ -122,7 +122,7 @@ Import default module
 console.log(__WEBPACK_IMPORTED_MODULE_1__utils_default__["a" /* default */]);
 ```
 
-Import whole module
+### Import whole module
 ```
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(0);
 …
@@ -140,10 +140,10 @@ How about import default module? When you do `import * as ModuleToMock from './u
 
 And finally in the import whole module example, it transformed  Utils to `__WEBPACK_IMPORTED_MODULE_1__utils__` which gives you access to the "root" of the exported module so that you can mock both the named export and default export.
 
-Limitation
+# Limitation
 This methods work on module with named export. If the module exports a function directly, i.e.
 `module.exports = function notDefaultNorNamed() {}`
 There is no object exported and thus we cannot change or mock the function because we have no object member to change with.
 
-Conclusion
+# Conclusion
 So this is how we can mock an imported module/function and the mechanism behind the webpack scene. Please feel me to raise an issue if I made any mistake.
