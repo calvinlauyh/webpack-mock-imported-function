@@ -20,7 +20,8 @@ export function doSomething() {
 }
 ```
 
-Solution
+# Solution
+
 After some research on the internet, I found a solution on StackOverflow https://stackoverflow.com/a/38414108/3259983. What it suggest is in the test file do the following:
 ```
 import sinon from ‘sinon’;
